@@ -11,7 +11,6 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen, mode }) => {
 
   return (
     <>
-      {/* Overlay */}
       {isOpen && (
         <div
           className={`fixed inset-0 backdrop-blur-sm z-30 lg:hidden ${
@@ -21,7 +20,6 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen, mode }) => {
         />
       )}
 
-      {/* Sidebar */}
       <aside
         className={`fixed left-0 top-0 h-screen w-64 flex flex-col border-r z-40
         transition-transform duration-300 ease-in-out
@@ -29,13 +27,12 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen, mode }) => {
         ${
           isDark
             ? 'bg-slate-900 text-slate-300 border-slate-800'
-            : 'bg-gray-100 text-gray-800 border-gray-300'
+            : 'bg-gradient-to-b from-[#63B8B1]/80 to-[#29579A]/70 text-black border-[#63B8B1]'
         }`}
       >
-        {/* Header */}
         <div className="p-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+            <div className="h-9 w-9 bg-blue-900 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
               <DollarSign size={24} color="white" />
             </div>
 
@@ -51,14 +48,13 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen, mode }) => {
             className={`lg:hidden ${
               isDark
                 ? 'text-slate-400 hover:text-white'
-                : 'text-gray-500 hover:text-black'
+                : 'text-black/70 hover:text-black'
             }`}
           >
             <X size={24} />
           </button>
         </div>
 
-        {/* Navigation */}
         <nav className="flex-1 px-4 space-y-2 mt-4">
           {menuItems.map((item) => (
             <button
@@ -71,10 +67,10 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen, mode }) => {
                 activeTab === item.id
                   ? isDark
                     ? 'bg-slate-700 text-white'
-                    : 'bg-gray-300 text-black'
+                    : 'bg-white/70 text-black border border-[#63B8B1]'
                   : isDark
                   ? 'hover:bg-slate-800 hover:text-white'
-                  : 'hover:bg-gray-200 hover:text-black'
+                  : 'hover:bg-white/30 hover:text-black'
               }`}
             >
               <item.icon size={20} />
@@ -83,11 +79,10 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen, mode }) => {
           ))}
         </nav>
 
-        {/* Footer */}
         <div className={`p-8 border-t text-[10px] uppercase font-bold ${
           isDark
             ? 'border-slate-800 text-slate-500'
-            : 'border-gray-300 text-gray-500'
+            : 'border-[#63B8B1] text-black/60'
         }`}>
           finance dashboard &copy; 2026
         </div>

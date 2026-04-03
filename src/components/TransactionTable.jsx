@@ -3,8 +3,29 @@ import TransactionItem from './TransactionItem';
 
 const TransactionTable = ({ transactions, role, mode, deleteTransaction, onEditTransaction }) => {
   return (
-    <div className={`${mode === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-gray-100'} rounded-2xl shadow-sm overflow-hidden`}>
-      <div className={`hidden md:grid grid-cols-4 gap-4 p-4 text-xs font-bold uppercase tracking-wider ${mode === 'dark' ? 'bg-slate-700 border-b border-slate-700 text-slate-100' : 'bg-gray-50/50 border-b border-gray-100 text-gray-400'}`}>
+    <div
+      className={`${
+        mode === 'dark'
+          ? 'bg-slate-800 border-slate-700'
+          : `
+            bg-gradient-to-r from-[#63B8B1]/15 to-[#29579A]/15
+            border border-[#63B8B1]
+            hover:bg-gradient-to-r hover:from-[#63B8B1]/25 hover:to-[#29579A]/25
+            hover:border-[#29579A]
+          `
+      } rounded-2xl shadow-sm overflow-hidden transition-all duration-300`}
+    >
+      <div
+        className={`hidden md:grid grid-cols-4 gap-4 p-4 text-xs font-bold uppercase tracking-wider ${
+          mode === 'dark'
+            ? 'bg-slate-700 border-b border-slate-700 text-slate-100'
+            : `
+              bg-gradient-to-r from-[#63B8B1]/20 to-[#29579A]/20
+              border-b border-[#63B8B1]
+              text-gray-700
+            `
+        }`}
+      >
         <div className="pl-10">Description & Category</div>
         <div className="text-center">Date</div>
         <div className="text-right">Amount</div>
@@ -14,7 +35,14 @@ const TransactionTable = ({ transactions, role, mode, deleteTransaction, onEditT
       <div className="divide-y divide-gray-100">
         {transactions.length > 0 ? (
           transactions.map((tx) => (
-            <TransactionItem key={tx.id} mode={mode} transaction={tx} role={role} deleteTransaction={deleteTransaction} onEdit={() => onEditTransaction(tx)} />
+            <TransactionItem
+              key={tx.id}
+              mode={mode}
+              transaction={tx}
+              role={role}
+              deleteTransaction={deleteTransaction}
+              onEdit={() => onEditTransaction(tx)}
+            />
           ))
         ) : (
           <div className="py-20 flex flex-col items-center justify-center text-gray-400">

@@ -60,7 +60,7 @@ function App() {
              activeTab === 'transactions' ? 'Transactions History' : 'Financial Insights'}
           </h2>
           <p className="text-slate-500 mt-1">
-            Viewing as <span className={`font-bold uppercase ${role === 'admin' ? 'text-blue-600' : 'text-slate-400'}`}>
+            Viewing as <span className={`font-bold uppercase ${role === 'admin' ? 'text-blue-900' : 'text-slate-400'}`}>
               {role}
             </span>
           </p>
@@ -70,7 +70,7 @@ function App() {
         {role === 'admin' && activeTab === 'transactions' && (
           <button 
             onClick={() => { setEditingTransaction(null); setIsModalOpen(true); }}
-            className={`flex items-center gap-2 ${mode === 'dark' ? 'bg-slate-600 hover:bg-slate-700 shadow-slate-600/20' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-600/20'} text-white px-6 py-3 rounded-xl font-bold shadow-lg transition-all active:scale-95`}
+            className={`flex items-center gap-2 ${mode === 'dark' ? 'bg-slate-600 hover:bg-slate-700 shadow-slate-600/20' : 'bg-blue-800 hover:bg-blue-900 shadow-blue-800/20'} text-white px-6 py-3 rounded-xl font-bold shadow-lg transition-all active:scale-95`}
           >
             <Plus size={20} /> Add Transaction
           </button>

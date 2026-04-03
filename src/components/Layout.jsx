@@ -16,7 +16,11 @@ const Layout = ({
   setIsOpen
 }) => {
   return (
-    <div className={`min-h-screen font-sans transition-colors duration-300 ${mode === 'dark' ? 'bg-slate-900 text-slate-100' : 'bg-slate-300 text-slate-900'}`}>
+    <div className={`min-h-screen font-sans transition-colors duration-300 ${
+      mode === 'dark' 
+        ? 'bg-slate-900 text-slate-100' 
+        : 'bg-white text-slate-900'
+    }`}>
 
       <Sidebar 
         activeTab={activeTab} 
@@ -45,6 +49,7 @@ const Layout = ({
             {children}
           </div>
         </main>
+
         <footer className="p-4 md:p-8 border-t border-slate-200/60 text-center">
           <p className="text-slate-400 text-xs font-medium tracking-wide">
             FINANCE DASHBOARD UI 2026 
