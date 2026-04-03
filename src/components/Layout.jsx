@@ -25,6 +25,7 @@ const Layout = ({
         setRole={setRole}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
+        mode={mode}
       />
 
       <div className="flex flex-col min-h-screen lg:ml-64">
